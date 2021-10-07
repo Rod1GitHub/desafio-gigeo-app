@@ -3,7 +3,7 @@
 /* Portable */
 
 //===============================
-// 1. Font awesome icon form menu
+// 1. Font awesome icon form menu (is here to make it portable)
 //===============================
  @import url("https://use.fontawesome.com/releases/v5.13.0/css/all.css");
 
@@ -36,10 +36,10 @@ input[type=checkbox] {
 //4. Styling and Positioning. (Non responsive)
 //===============================
 .collapse {
-        text-align: right;
+        text-align: right; //position the icon
 
         &__menu-content {
-        text-align: left;
+        text-align: left; //position the text
         }
 }
 
@@ -48,6 +48,7 @@ input[type=checkbox] {
     color: inherit;
     font-family: inherit;
     font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
 }
 
 //===============================
@@ -62,7 +63,7 @@ input[type=checkbox] {
         @include animate;
         display: block;
         width: 140px;
-        height: 2em; /* Needs to match Icon Font-Size */
+        height: 2.5em; /* Needs to match Icon Font-Size */
         overflow: hidden;
         cursor:pointer;
 
@@ -71,7 +72,7 @@ input[type=checkbox] {
         font-family: "Font Awesome 5 Free";
         content: '\f0c9'; 
         font-weight: 900; /* This needs to be 900 for the icon to display */
-        font-size:2em; /* Icon Font-Size to match */
+        font-size:2.5em; /* Icon Font-Size to match */
         background-color: cyan;
    }
 &__menu-content {

@@ -4,19 +4,80 @@
 
 /* Parent Child Level Diagram
 |.container
-|--|nav
-|--|.box
-|--|--|header
-|--|--|main
-|--|--|article 
-|--|--|section
-|--|--|aside
-|--|--|.row
+|--|nav-box
+|--|--|header-box
+|--|--|main-box
+|--|--|article-box
+|--|--|section-box
+|--|--|aside-box
+|--|--|.row-box
 |--|--|--|.col (can be child of header, main, article, section, aside, .row)
-|--|footer (child of .container)
+|--|footer-box (child of .container)
 */
 
-.f-container {
+.nav-box {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: auto;
+    &__brand {flex:2}
+    &__brand-logo {
+        width: auto;
+        height: 5em;
+    }
+    &__brand-text {
+        color: red;
+    }
+
+    &__menu {
+        flex:1;
+    }
+}
+
+.author-box {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: auto;
+
+    &__description {
+        flex:4;
+    }
+    &__circle-img {    
+        width: 128px;
+        height: 128px;
+        border-radius: 50%;
+        object-fit: cover; //needed for rectangular images}
+        }
+    &__interaction {
+        flex:1;
+    }
+
+}
+
+.video-box {
+    display: flex;
+    flex-wrap: wrap;
+    
+    width: 90%;
+    margin: auto;
+
+    &__card{
+        width: 25%;
+        height: 40vh;
+
+    }
+
+    &__card  img{
+        max-width: 100%;
+        height: auto;
+        }
+
+
+.footer-box {
+    text-align: center;
+}
+
 }
 
 

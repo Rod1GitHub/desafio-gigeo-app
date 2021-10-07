@@ -5,27 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gigeo App</title>
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <!--Icons-->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <!--CSS-->
     <link rel="stylesheet" href="./assets/css/style.css">
+
 </head>
+
 <body>
-<div class="f-container">
-<div class="tell-me-screen-size"></div>
 
-<nav class="nav">
+<div class="help-tell-me-screen-size"></div>
 
-    <div class="nav__brand">
-        <a href="#">XDA</a>
+<div class="container">
+
+<nav class="nav-box">
+
+    <div class="nav-box__brand col">
+        <img class="nav-box__brand-logo" src="./assets/img/logo-gigeoapp.png" alt="gigeoapp logo">
+        <p class="nav-box__brand-text">Hola</p>
     </div>
 
-    <div class="nav__menu">
+    <div class="nav-box__menu col">
         <input type="checkbox"  id="collapsable-menu">
             <label class="collapse" for="collapsable-menu">
+
                 <i class="collapse__menu-icon"></i>
                 <ul class="collapse__menu-content">
-                <li><a href="#">Mujer</a></li>
-                <li><a href="#">Hombre</a></li>
-                <li><a href="#">Accesorios</a></li>
-                <li><a href="#">Blog</a></li>
+                <li><a href="#"><i class="fas fa-search fa-2x"></i></a></li>
+                <li><a href="#"><i class="fas fa-video fa-2x"></i></a></li>
+                <li><a href="#"><i class="fas fa-plus fa-2x"></i></a></li>
+                <li><a href="#"><i class="far fa-bell fa-2x"></i></a></li>
                 <li><a href="https://github.com/Rod1GitHub/desafio-tienda-xda" target="_blank">GitHub</a></li>
                 </ul>
             </label>
@@ -33,17 +46,33 @@
 
 </nav>
 
-    <div class="f-box">
-        <div class="hero">
+        <header class="hero">
             <div class="hero__image"></div>
-        </div>
+        </header>
 
-    </div><!-- End f-box -->
-    <footer><p>All rights reserved</p></footer>
+        <section class="author-box">
+            <div class="author-box__description col">
+                <img class="author-box__circle-img" src="./assets/img/profile-image.png" alt="Author Image">
+            </div>
+            <div class="author-box__interaction col"><button>Mensaje</button><button>Seguir</button></div>
+        </section>
+
+        <main class="video-box">
+            <div class="video-box__card col"><img src="./assets/img/image-1.png" alt="video screenshot"></div>
+            <div class="video-box__card col"><img src="./assets/img/image-2.png" alt="video screenshot"></div>
+            <div class="video-box__card  col"><img src="./assets/img/image-3.png" alt="video screenshot"></div>
+            <div class="video-box__card col"><img src="./assets/img/image-4.png" alt="video screenshot"></div>
+            <div class="video-box__card col"><img src="./assets/img/image-5.png" alt="video screenshot"></div>
+            <div class="video-box__card col"><img src="./assets/img/image-6.png" alt="video screenshot"></div>
+            <div class="video-box__card col"><img src="./assets/img/image-7.png" alt="video screenshot"></div>
+            <div class="video-box__card col"><img src="./assets/img/image-8.png" alt="video screenshot"></div>
+        </main>
+
+<footer class="footer-box"><p>All rights reserved</p></footer>
 
     
 
 
-</div> <!-- End f-container -->
+</div> <!-- End container -->
 </body>
 </html>

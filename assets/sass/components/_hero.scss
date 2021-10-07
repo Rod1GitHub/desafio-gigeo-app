@@ -1,17 +1,13 @@
 .hero {
-
     &__image {
         background-image: url("../img/image-banner.png");
-        background-position: center center;
+        background-position: 0% 50%;
         background-repeat: no-repeat;
         background-size: cover;
         position: relative;
-        height: 80vh;
+        height: 30vh;
     }
 
-    &__title {}
-    &__sub-title {}
-    &__description {}
   }
 
 

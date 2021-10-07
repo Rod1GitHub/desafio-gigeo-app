@@ -73,17 +73,85 @@ table {
 /* Semi-Portable; Dependency: layout/_breakpoint-master-dont-modify */
 /* Parent Child Level Diagram
 |.container
-|--|nav
-|--|.box
-|--|--|header
-|--|--|main
-|--|--|article 
-|--|--|section
-|--|--|aside
-|--|--|.row
+|--|nav-box
+|--|--|header-box
+|--|--|main-box
+|--|--|article-box
+|--|--|section-box
+|--|--|aside-box
+|--|--|.row-box
 |--|--|--|.col (can be child of header, main, article, section, aside, .row)
-|--|footer (child of .container)
+|--|footer-box (child of .container)
 */
+.nav-box {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: auto;
+}
+.nav-box__brand {
+  flex: 2;
+}
+.nav-box__brand-logo {
+  width: auto;
+  height: 5em;
+}
+.nav-box__brand-text {
+  color: red;
+}
+.nav-box__menu {
+  flex: 1;
+}
+
+.author-box {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: auto;
+}
+.author-box__description {
+  flex: 4;
+}
+.author-box__circle-img {
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.author-box__interaction {
+  flex: 1;
+}
+
+.video-box {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: auto;
+}
+.video-box__card {
+  width: 25%;
+  height: 40vh;
+}
+.video-box__card img {
+  max-width: 100%;
+  height: auto;
+}
+.video-box .footer-box {
+  text-align: center;
+}
+
+button {
+  background-color: tomato;
+  color: white;
+  border: none;
+  padding: 15px 32px;
+  margin: 0 10px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1em;
+  cursor: pointer;
+}
+
 /* component/collapsable-menu-css-only */
 /* Use: Burguer Icon without JS */
 /* Portable */
@@ -106,6 +174,7 @@ input[type=checkbox]:checked ~ .collapse {
   color: inherit;
   font-family: inherit;
   font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
 }
 
 @media (max-width: 991.98px) {
@@ -119,7 +188,7 @@ input[type=checkbox]:checked ~ .collapse {
     transform-style: preserve-3d;
     display: block;
     width: 140px;
-    height: 2em;
+    height: 2.5em;
     /* Needs to match Icon Font-Size */
     overflow: hidden;
     cursor: pointer;
@@ -129,7 +198,7 @@ input[type=checkbox]:checked ~ .collapse {
     content: "\f0c9";
     font-weight: 900;
     /* This needs to be 900 for the icon to display */
-    font-size: 2em;
+    font-size: 2.5em;
     /* Icon Font-Size to match */
     background-color: cyan;
   }
@@ -149,12 +218,13 @@ input[type=checkbox]:checked ~ .collapse {
 
 .hero__image {
   background-image: url("../img/image-banner.png");
-  background-position: center center;
+  background-position: 0% 50%;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  height: 80vh;
+  height: 30vh;
 }
+
 /* themes/help-show-me-layout */
 /* Use: To display layout boxes */
 /* Portable */
@@ -197,44 +267,44 @@ footer {
 /* themes/_help-tell-me-screen-size */
 /* Use: display screen size message */
 /* Semi-Portable; Dependency: layout/_breakpoint-master-dont-modify */
-.tell-me-screen-size::before {
+.help-tell-me-screen-size::before {
   display: block;
   text-align: center;
   border: 1px solid black;
   padding: 0.5em;
 }
 @media (min-width: 1400px) {
-  .tell-me-screen-size::before {
+  .help-tell-me-screen-size::before {
     background-color: red;
     content: "Screen size: XX-Large. | Usually: desktop screens";
   }
 }
 @media (min-width: 1200px) and (max-width: 1399.98px) {
-  .tell-me-screen-size::before {
+  .help-tell-me-screen-size::before {
     background-color: darkorange;
     content: 'Screen size: X-Large. | Usually: most-used 13" laptops';
   }
 }
 @media (min-width: 992px) and (max-width: 1199.98px) {
-  .tell-me-screen-size::before {
+  .help-tell-me-screen-size::before {
     background-color: yellow;
     content: "Screen size: Large. | Usually: small laptops";
   }
 }
 @media (min-width: 768px) and (max-width: 991.98px) {
-  .tell-me-screen-size::before {
+  .help-tell-me-screen-size::before {
     background-color: #7ac53d;
     content: "Screen size: Medium. | Usually: tablets and e-readers";
   }
 }
 @media (min-width: 576px) and (max-width: 767.98px) {
-  .tell-me-screen-size::before {
+  .help-tell-me-screen-size::before {
     background-color: lightskyblue;
     content: "Screen size: Small. | Usually: smartphones horizontal-view";
   }
 }
 @media (max-width: 575.98px) {
-  .tell-me-screen-size::before {
+  .help-tell-me-screen-size::before {
     background-color: pink;
     content: "Screen size: X-Small. | Usually: smartphones";
   }
