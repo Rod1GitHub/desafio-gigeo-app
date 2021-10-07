@@ -56,7 +56,7 @@ input[type=checkbox] {
         content: '\f0c9'; 
         font-weight: 900; /* This needs to be 900 for the icon to display */
         font-size:2em; /* Icon Font-Size to match */
-        position: absolute;
+        position: relative;
         top:0;
         right:0;
         background-color: cyan;
