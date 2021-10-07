@@ -1,0 +1,237 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import url("https://use.fontawesome.com/releases/v5.13.0/css/all.css");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* layout/breakpoint-master-dont-modify */
+/* For breakpoint control */
+/* Portable */
+/* 1. Define breakpoint variables. Sizes obtained from Bootstrap 4.6 */
+/* 2. Responsive breakpoint manager */
+/* End of responsive breakpoint manager */
+/* 3. Sample. How to use it: This is a BEM approach (Block Element Modifier based approach) */
+/* body {
+  @include screen-size('x-large') {
+      font-family: Arial, Helvetica, sans-serif;
+  }
+}
+ */
+/* layout/layout-global-level-responsive-design */
+/* Use: layout global definitions */
+/* Semi-Portable; Dependency: layout/_breakpoint-master-dont-modify */
+/* Parent Child Level Diagram
+|.container
+|--|nav
+|--|.box
+|--|--|header
+|--|--|main
+|--|--|article 
+|--|--|section
+|--|--|aside
+|--|--|.row
+|--|--|--|.col (can be child of header, main, article, section, aside, .row)
+|--|footer (child of .container)
+*/
+/* component/collapsable-menu-css-only */
+/* Use: Burguer Icon without JS */
+/* Portable */
+input[type=checkbox] {
+  display: none;
+}
+input[type=checkbox]:checked ~ .collapse {
+  height: 170px;
+}
+
+.collapse__menu-content a {
+  text-decoration: none;
+  color: inherit;
+  font-family: inherit;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@media (max-width: 991.98px) {
+  .collapse {
+    transition: 0.4s;
+    animation-timing-function: linear;
+    transform-style: preserve-3d;
+    display: block;
+    width: 140px;
+    height: 2em;
+    /* Needs to match Icon Font-Size */
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .collapse__menu-icon:before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f0c9";
+    font-weight: 900;
+    /* This needs to be 900 for the icon to display */
+    font-size: 2em;
+    /* Icon Font-Size to match */
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: cyan;
+  }
+  .collapse__menu-content {
+    padding-top: 2em;
+    /* Needs to match Icon Font-Size */
+    background-color: red;
+  }
+  .collapse__menu-content a {
+    line-height: 1.5em;
+  }
+}
+@media (min-width: 992px) {
+  .collapse__menu-content > li {
+    background-color: pink;
+    display: inline;
+  }
+}
+
+.hero__image {
+  background-image: url("../img/image-banner.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  height: 80vh;
+}
+/* themes/help-show-me-layout */
+/* Use: To display layout boxes */
+/* Portable */
+.container, .f-container, .g-container, .p-container {
+  background-color: aqua;
+  border: 5px solid blue;
+}
+
+.box, .f-box, .g-box, .p-box {
+  background-color: yellow;
+  border: 5px solid orange;
+}
+
+.row, .f-row, .g-row, .p-row,
+nav,
+header,
+main,
+article,
+section,
+aside,
+footer {
+  background-color: violet;
+  border: 5px solid purple;
+}
+
+.col, .f-col, .g-col, .p-col,
+.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12,
+.f-col-1, .f-col-2, .f-col-3, .f-col-4, .f-col-5, .f-col-6, .f-col-7, .f-col-8, .f-col-9, .f-col-10, .f-col-11, .f-col-12,
+.g-col-1, .g-col-2, .g-col-3, .g-col-4, .g-col-5, .g-col-6, .g-col-7, .g-col-8, .g-col-9, .g-col-10, .g-col-11, .g-col-12,
+.p-col-1, .p-col-2, .p-col-3, .p-col-4, .p-col-5, .p-col-6, .p-col-7, .p-col-8, .p-col-9, .p-col-10, .p-col-11, .p-col-12 {
+  background-color: pink;
+  border: 5px solid red;
+}
+
+.pos-right, .pos-left, .pos-fixed {
+  background-color: darkgrey;
+  border: 1px solid black;
+}
+
+/* themes/_help-tell-me-screen-size */
+/* Use: display screen size message */
+/* Semi-Portable; Dependency: layout/_breakpoint-master-dont-modify */
+.tell-me-screen-size::before {
+  display: block;
+  text-align: center;
+  border: 1px solid black;
+  padding: 0.5em;
+}
+@media (min-width: 1400px) {
+  .tell-me-screen-size::before {
+    background-color: red;
+    content: "Screen size: XX-Large. | Usually: desktop screens";
+  }
+}
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+  .tell-me-screen-size::before {
+    background-color: darkorange;
+    content: 'Screen size: X-Large. | Usually: most-used 13" laptops';
+  }
+}
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .tell-me-screen-size::before {
+    background-color: yellow;
+    content: "Screen size: Large. | Usually: small laptops";
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .tell-me-screen-size::before {
+    background-color: #7ac53d;
+    content: "Screen size: Medium. | Usually: tablets and e-readers";
+  }
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .tell-me-screen-size::before {
+    background-color: lightskyblue;
+    content: "Screen size: Small. | Usually: smartphones horizontal-view";
+  }
+}
+@media (max-width: 575.98px) {
+  .tell-me-screen-size::before {
+    background-color: pink;
+    content: "Screen size: X-Small. | Usually: smartphones";
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

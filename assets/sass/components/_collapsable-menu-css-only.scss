@@ -1,0 +1,86 @@
+/* component/collapsable-menu-css-only */
+/* Use: Burguer Icon without JS */
+/* Portable */
+
+ // 1. Font awesome icon form menu
+ @import url("https://use.fontawesome.com/releases/v5.13.0/css/all.css");
+
+// 2. Mixin
+@mixin animate{
+        transition: 0.4s;
+        animation-timing-function: linear;
+        transform-style: preserve-3d;
+}
+
+// 3.1 Input checkbox
+input[type=checkbox] {    
+        display: none;
+// 3.2 Checkbox in checked state
+        &:checked {
+        ~ .collapse {
+        height: 170px;
+        }
+        }
+}
+
+//4. Styling. (Non responsive)
+.collapse__menu-content a {
+    text-decoration: none;
+    color: inherit;
+    font-family: inherit;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+//5. Responsive Behavior for Collapse Menu Element: 2 States.
+.collapse {
+
+// When x-small, small and medium: State collapsed
+@media (max-width: 991.98px){
+
+
+        @include animate;
+        display: block;
+        width: 140px;
+        height: 2em; /* Needs to match Icon Font-Size */
+        overflow: hidden;
+        cursor:pointer;
+
+
+&__menu-icon:before {
+        font-family: "Font Awesome 5 Free";
+        content: '\f0c9'; 
+        font-weight: 900; /* This needs to be 900 for the icon to display */
+        font-size:2em; /* Icon Font-Size to match */
+        position: absolute;
+        top:0;
+        right:0;
+        background-color: cyan;
+   }
+&__menu-content {
+    padding-top: 2em;  /* Needs to match Icon Font-Size */
+    background-color: red;
+  }
+
+//Styling (responsive to smaller screens)
+&__menu-content a {
+    line-height: 1.5em;
+}
+}
+
+// when large, x-large and xx-large: State not collapsed
+@media (min-width: 992px) {
+   
+&__menu-content > li {
+    background-color:pink;
+    display: inline;
+  }
+
+//Styling (responsive to bigger screens)
+&__menu-content a {
+}
+}
+}
+
+
+    

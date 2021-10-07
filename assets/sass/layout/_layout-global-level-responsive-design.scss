@@ -1,0 +1,22 @@
+/* layout/layout-global-level-responsive-design */
+/* Use: layout global definitions */
+/* Semi-Portable; Dependency: layout/_breakpoint-master-dont-modify */
+
+/* Parent Child Level Diagram
+|.container
+|--|nav
+|--|.box
+|--|--|header
+|--|--|main
+|--|--|article 
+|--|--|section
+|--|--|aside
+|--|--|.row
+|--|--|--|.col (can be child of header, main, article, section, aside, .row)
+|--|footer (child of .container)
+*/
+
+.f-container {
+}
+
+
