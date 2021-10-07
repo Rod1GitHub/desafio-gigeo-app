@@ -94,6 +94,13 @@ input[type=checkbox]:checked ~ .collapse {
   height: 170px;
 }
 
+.collapse {
+  text-align: right;
+}
+.collapse__menu-content {
+  text-align: left;
+}
+
 .collapse__menu-content a {
   text-decoration: none;
   color: inherit;
@@ -103,8 +110,12 @@ input[type=checkbox]:checked ~ .collapse {
 
 @media (max-width: 991.98px) {
   .collapse {
+    -webkit-transition: 0.4s;
+    -o-transition: 0.4s;
     transition: 0.4s;
+    -webkit-animation-timing-function: linear;
     animation-timing-function: linear;
+    -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
     display: block;
     width: 140px;
@@ -120,14 +131,9 @@ input[type=checkbox]:checked ~ .collapse {
     /* This needs to be 900 for the icon to display */
     font-size: 2em;
     /* Icon Font-Size to match */
-    position: absolute;
-    top: 0;
-    right: 0;
     background-color: cyan;
   }
   .collapse__menu-content {
-    padding-top: 2em;
-    /* Needs to match Icon Font-Size */
     background-color: red;
   }
   .collapse__menu-content a {

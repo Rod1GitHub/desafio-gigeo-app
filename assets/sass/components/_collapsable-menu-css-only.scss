@@ -2,10 +2,14 @@
 /* Use: Burguer Icon without JS */
 /* Portable */
 
- // 1. Font awesome icon form menu
+//===============================
+// 1. Font awesome icon form menu
+//===============================
  @import url("https://use.fontawesome.com/releases/v5.13.0/css/all.css");
 
+//===============================
 // 2. Mixin
+//===============================
 @mixin animate{
         -webkit-transition: 0.4s;
         -o-transition: 0.4s;
@@ -15,8 +19,9 @@
         -webkit-transform-style: preserve-3d;
                 transform-style: preserve-3d;
 }
-
+//===============================
 // 3.1 Input checkbox
+//===============================
 input[type=checkbox] {    
         display: none;
 // 3.2 Checkbox in checked state
@@ -27,7 +32,17 @@ input[type=checkbox] {
         }
 }
 
-//4. Styling. (Non responsive)
+//===============================
+//4. Styling and Positioning. (Non responsive)
+//===============================
+.collapse {
+        text-align: right;
+
+        &__menu-content {
+        text-align: left;
+        }
+}
+
 .collapse__menu-content a {
     text-decoration: none;
     color: inherit;
@@ -35,8 +50,9 @@ input[type=checkbox] {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-
+//===============================
 //5. Responsive Behavior for Collapse Menu Element: 2 States.
+//===============================
 .collapse {
 
 // When x-small, small and medium: State collapsed
@@ -56,13 +72,9 @@ input[type=checkbox] {
         content: '\f0c9'; 
         font-weight: 900; /* This needs to be 900 for the icon to display */
         font-size:2em; /* Icon Font-Size to match */
-        position: relative;
-        top:0;
-        right:0;
         background-color: cyan;
    }
 &__menu-content {
-    padding-top: 2em;  /* Needs to match Icon Font-Size */
     background-color: red;
   }
 
