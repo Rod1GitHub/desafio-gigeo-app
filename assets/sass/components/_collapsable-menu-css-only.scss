@@ -7,9 +7,13 @@
 
 // 2. Mixin
 @mixin animate{
+        -webkit-transition: 0.4s;
+        -o-transition: 0.4s;
         transition: 0.4s;
-        animation-timing-function: linear;
-        transform-style: preserve-3d;
+        -webkit-animation-timing-function: linear;
+                animation-timing-function: linear;
+        -webkit-transform-style: preserve-3d;
+                transform-style: preserve-3d;
 }
 
 // 3.1 Input checkbox
@@ -81,6 +85,3 @@ input[type=checkbox] {
 }
 }
 }
-
-
-    
