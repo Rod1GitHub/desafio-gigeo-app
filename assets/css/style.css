@@ -1,3 +1,15 @@
+/* abstracts/variables */
+/* Colors */
+/* Font Size */
+/* 50px */
+/* 30px */
+/* 20px */
+/* 18px */
+/* 16px */
+/* 14px */
+/* 12px */
+/* Font Family */
+/* Font weight */
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -53,6 +65,50 @@ q:before, q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+/* base/typography */
+body {
+  font-family: "Old Standard TT", serif;
+  font-family: "Roboto", sans-serif;
+}
+
+h1 {
+  font-family: "Old Standard TT", serif;
+  font-size: 3.125em;
+  font-weight: 700;
+}
+
+h2 {
+  font-family: "Old Standard TT", serif;
+  font-size: 1.875em;
+  font-weight: 700;
+}
+
+h3 {
+  font-family: "Old Standard TT", serif;
+  font-size: 1.25em;
+  font-weight: 700;
+  padding: 5px;
+}
+
+label {
+  font-family: "Old Standard TT", serif;
+  font-size: 0.75em;
+  font-weight: 700;
+  padding: 5px;
+}
+
+p {
+  font-family: "Roboto", sans-serif;
+  font-size: 1em;
+  font-weight: 400;
+}
+
+a {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.125em;
+  font-weight: 700;
 }
 
 /* layout/breakpoint-master-dont-modify */
@@ -435,24 +491,25 @@ table {
 .author-box {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 10px 0 0 0;
   width: 90%;
   margin: auto;
 }
-@media (max-width: 767.98px) {
-  .author-box {
-    width: 100%;
-  }
+.author-box__description {
+  display: flex;
+  flex-direction: row;
 }
 .author-box__circle-img {
-  width: 130px;
-  height: 130px;
   border-radius: 50%;
   object-fit: cover;
+  width: 95px;
+  height: 95px;
 }
 @media (max-width: 1199.98px) {
   .author-box__circle-img {
-    width: 115px;
-    height: 115px;
+    width: 95px;
+    height: 95px;
   }
 }
 @media (max-width: 991.98px) {
@@ -473,36 +530,114 @@ table {
     height: 60px;
   }
 }
-.video-box {
-  display: flex;
-  flex-wrap: wrap;
-  width: 90%;
-  margin: auto;
+.author-box__username {
+  color: red;
+  align-self: center;
+  margin: 0 0 0 20px;
+}
+.author-box__username--bold {
+  font-size: 1.125em;
+  color: #0c0910;
+  font-weight: 700;
 }
 @media (max-width: 767.98px) {
+  .author-box__username--bold {
+    font-size: 1em;
+  }
+}
+.author-box__username--light {
+  font-size: 1em;
+  color: #646266;
+  font-weight: 400;
+}
+@media (max-width: 767.98px) {
+  .author-box__username--light {
+    font-size: 0.875em;
+  }
+}
+.author-box__interaction {
+  align-self: center;
+}
+
+.video-box {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  direction: row;
+  gap: 1em 1em;
+  justify-content: space-around;
+}
+@media (min-width: 1400px) {
   .video-box {
-    width: 100%;
+    justify-content: flex-start;
+    color: red;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .video-box {
+    justify-content: flex-start;
+    color: red;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .video-box {
+    justify-content: flex-start;
+    color: red;
   }
 }
 .video-box__card {
-  width: 25%;
-  height: 40vh;
+  width: 250px;
+  height: 250px;
 }
 .video-box__card img {
   max-width: 100%;
   height: auto;
 }
 
-button {
-  background-color: tomato;
+.my-button {
   color: white;
   border: none;
-  padding: 15px 32px;
-  margin: 0 10px;
   text-align: center;
   text-decoration: none;
-  font-size: 1em;
   cursor: pointer;
+  padding: 15px 32px;
+  margin: 0 10px;
+  font-size: 1em;
+}
+@media (max-width: 1199.98px) {
+  .my-button {
+    padding: 9px 24px;
+    margin: 0 8px;
+    font-size: 1em;
+  }
+}
+@media (max-width: 991.98px) {
+  .my-button {
+    padding: 9px 24px;
+    margin: 0 6px;
+    font-size: 1em;
+  }
+}
+@media (max-width: 767.98px) {
+  .my-button {
+    padding: 7px 20px;
+    margin: 0 4px;
+    font-size: 0.8em;
+  }
+}
+@media (max-width: 575.98px) {
+  .my-button {
+    padding: 5px 16px;
+    margin: 0 2px;
+    font-size: 0.8em;
+  }
+}
+.my-button--red {
+  background-color: tomato;
+}
+.my-button--blue {
+  background-color: #82b4ff;
 }
 
 /* component/collapsable-menu-css-only */
@@ -516,50 +651,77 @@ button {
   width: 90%;
   margin: auto;
 }
-@media (max-width: 767.98px) {
-  .f-nav-box {
-    width: 100%;
-  }
-}
 .f-nav-box__brand-logo {
   width: auto;
   height: 5em;
+  padding: 10px 0;
+  width: 200px;
+  height: auto;
+}
+@media (max-width: 1199.98px) {
+  .f-nav-box__brand-logo {
+    width: 180px;
+    height: auto;
+  }
+}
+@media (max-width: 991.98px) {
+  .f-nav-box__brand-logo {
+    width: 160px;
+    height: auto;
+  }
 }
 @media (max-width: 767.98px) {
   .f-nav-box__brand-logo {
-    max-width: 100%;
+    width: 140px;
     height: auto;
   }
 }
 @media (max-width: 575.98px) {
   .f-nav-box__brand-logo {
-    height: 3em;
+    width: 120px;
+    height: auto;
   }
 }
+.f-nav-box__menu {
+  align-self: center;
+}
+@media (max-width: 991.98px) {
+  .f-nav-box__menu {
+    align-self: stretch;
+    padding: 20px 0;
+  }
+}
+
 input[type=checkbox] {
   display: none;
 }
 input[type=checkbox]:checked ~ .collapse {
-  height: 200px;
+  height: 250px;
 }
 
 .collapse {
   text-align: right;
+  color: #646266;
 }
 @media (max-width: 991.98px) {
   .collapse__menu-content {
-    text-align: left;
+    text-align: center;
   }
 }
 @media (max-width: 991.98px) and (max-width: 575.98px) {
   .collapse__menu-content {
-    text-align: right;
+    text-align: left;
   }
 }
 .collapse__menu-content a {
   text-decoration: none;
-  color: inherit;
-  font-family: inherit;
+  color: #0c0910;
+  font-family: "Roboto", sans-serif;
+  margin-left: 1em;
+}
+.collapse .link-text {
+  font-size: 1.875em;
+  background-color: yellow;
 }
 @media (max-width: 991.98px) {
   .collapse {
@@ -572,7 +734,7 @@ input[type=checkbox]:checked ~ .collapse {
     transform-style: preserve-3d;
     display: block;
     width: 170px;
-    height: 2.5em;
+    height: 2.8em;
     /* Needs to match Icon Font-Size */
     overflow: hidden;
     cursor: pointer;
@@ -595,7 +757,7 @@ input[type=checkbox]:checked ~ .collapse {
 }
 @media (max-width: 991.98px) {
   .collapse__menu-content a {
-    line-height: 1.5em;
+    line-height: 3em;
   }
 }
 @media (min-width: 992px) {
@@ -634,168 +796,6 @@ input[type=checkbox]:checked ~ .collapse {
 @media (max-width: 575.98px) {
   .hero__image {
     height: 100px;
-  }
-}
-
-/* themes/help-show-me-layout */
-/* Use: To display layout boxes */
-/* Portable */
-.container, .f-container, .g-container, .p-container {
-  background-color: aqua;
-  border: 5px solid blue;
-}
-
-.box, .f-box, .g-box, .p-box {
-  background-color: yellow;
-  border: 5px solid orange;
-}
-
-.row, .f-row, .g-row, .p-row,
-nav,
-header,
-main,
-article,
-section,
-aside,
-footer {
-  background-color: violet;
-  border: 5px solid purple;
-}
-
-.col, .f-col, .g-col, .p-col,
-.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12,
-.f-col-1, .f-col-2, .f-col-3, .f-col-4, .f-col-5, .f-col-6, .f-col-7, .f-col-8, .f-col-9, .f-col-10, .f-col-11, .f-col-12,
-.g-col-1, .g-col-2, .g-col-3, .g-col-4, .g-col-5, .g-col-6, .g-col-7, .g-col-8, .g-col-9, .g-col-10, .g-col-11, .g-col-12,
-.p-col-1, .p-col-2, .p-col-3, .p-col-4, .p-col-5, .p-col-6, .p-col-7, .p-col-8, .p-col-9, .p-col-10, .p-col-11, .p-col-12,
-.f-col-xx-lg-12,
-.f-col-xx-lg-11,
-.f-col-xx-lg-10,
-.f-col-xx-lg-9,
-.f-col-xx-lg-8,
-.f-col-xx-lg-7,
-.f-col-xx-lg-6,
-.f-col-xx-lg-5,
-.f-col-xx-lg-4,
-.f-col-xx-lg-3,
-.f-col-xx-lg-2,
-.f-col-xx-lg-1,
-.f-col-x-lg-12,
-.f-col-x-lg-11,
-.f-col-x-lg-10,
-.f-col-x-lg-9,
-.f-col-x-lg-8,
-.f-col-x-lg-7,
-.f-col-x-lg-6,
-.f-col-x-lg-5,
-.f-col-x-lg-4,
-.f-col-x-lg-3,
-.f-col-x-lg-2,
-.f-col-x-lg-1,
-.f-col-lg-12,
-.f-col-lg-11,
-.f-col-lg-10,
-.f-col-lg-9,
-.f-col-lg-8,
-.f-col-lg-7,
-.f-col-lg-6,
-.f-col-lg-5,
-.f-col-lg-4,
-.f-col-lg-3,
-.f-col-lg-2,
-.f-col-lg-1,
-.f-col-md-12,
-.f-col-md-11,
-.f-col-md-10,
-.f-col-md-9,
-.f-col-md-8,
-.f-col-md-7,
-.f-col-md-6,
-.f-col-md-5,
-.f-col-md-4,
-.f-col-md-3,
-.f-col-md-2,
-.f-col-md-1,
-.f-col-sm-12,
-.f-col-sm-11,
-.f-col-sm-10,
-.f-col-sm-9,
-.f-col-sm-8,
-.f-col-sm-7,
-.f-col-sm-6,
-.f-col-sm-5,
-.f-col-sm-4,
-.f-col-sm-3,
-.f-col-sm-2,
-.f-col-sm-1,
-.f-col-x-sm-12,
-.f-col-x-sm-11,
-.f-col-x-sm-10,
-.f-col-x-sm-9,
-.f-col-x-sm-8,
-.f-col-x-sm-7,
-.f-col-x-sm-6,
-.f-col-x-sm-5,
-.f-col-x-sm-4,
-.f-col-x-sm-3,
-.f-col-x-sm-2,
-.f-col-x-sm-1 {
-  background-color: pink;
-  border: 5px solid red;
-}
-
-.f-col-auto {
-  background-color: pink;
-  border: 5px solid orange;
-}
-
-.pos-right, .pos-left, .pos-fixed {
-  background-color: darkgrey;
-  border: 1px solid black;
-}
-
-/* themes/_help-tell-me-screen-size */
-/* Use: display screen size message */
-/* Semi-Portable; Dependency: layout/_breakpoint-master-dont-modify */
-.help-tell-me-screen-size::before {
-  display: block;
-  text-align: center;
-  border: 1px solid black;
-  padding: 0.5em;
-}
-@media (min-width: 1400px) {
-  .help-tell-me-screen-size::before {
-    background-color: red;
-    content: "Screen size: XX-Large. | Usually: desktop screens";
-  }
-}
-@media (min-width: 1200px) and (max-width: 1399.98px) {
-  .help-tell-me-screen-size::before {
-    background-color: darkorange;
-    content: 'Screen size: X-Large. | Usually: most-used 13" laptops';
-  }
-}
-@media (min-width: 992px) and (max-width: 1199.98px) {
-  .help-tell-me-screen-size::before {
-    background-color: yellow;
-    content: "Screen size: Large. | Usually: small laptops";
-  }
-}
-@media (min-width: 768px) and (max-width: 991.98px) {
-  .help-tell-me-screen-size::before {
-    background-color: #7ac53d;
-    content: "Screen size: Medium. | Usually: tablets and e-readers";
-  }
-}
-@media (min-width: 576px) and (max-width: 767.98px) {
-  .help-tell-me-screen-size::before {
-    background-color: lightskyblue;
-    content: "Screen size: Small. | Usually: smartphones horizontal-view";
-  }
-}
-@media (max-width: 575.98px) {
-  .help-tell-me-screen-size::before {
-    background-color: pink;
-    content: "Screen size: X-Small. | Usually: smartphones";
   }
 }
 

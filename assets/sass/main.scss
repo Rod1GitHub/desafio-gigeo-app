@@ -1,6 +1,6 @@
 // main.scss # Manifest File
 // 1 Abstracts
-    //variables
+@import './abstracts/variables';
     //functions
     //mixins
     //placeholders
@@ -8,7 +8,7 @@
 // 3 Base
 @import './base/reset';
     //reset
-    //typography
+@import './base/typography';
 // 4 Layout (grid)
 @import './layout/breakpoint-master-dont-modify';
 @import './layout/column-master-dont-modify';
@@ -43,7 +43,7 @@
     //home
     //contact
 // 7 Themes 
-@import './themes/help-show-me-layout';
-@import './themes/help-tell-me-screen-size';
+//@import './themes/help-show-me-layout';
+//@import './themes/help-tell-me-screen-size';
     //theme
     //admin
