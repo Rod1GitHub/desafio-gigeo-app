@@ -15,42 +15,41 @@
 |--|footer-box (child of .container)
 */
 
-.nav-box {
-    display: flex;
-    flex-wrap: wrap;
-    width: 90%;
-    margin: auto;
-    &__brand {flex:2}
-    &__brand-logo {
-        width: auto;
-        height: 5em;
-    }
-    &__brand-text {
-        color: red;
-    }
-
-    &__menu {
-        flex:1;
-    }
-}
-
 .author-box {
     display: flex;
     flex-wrap: wrap;
     width: 90%;
+    @media (max-width: 767.98px) {
+        width: 100%;   }
     margin: auto;
 
     &__description {
-        flex:4;
     }
+
     &__circle-img {    
-        width: 128px;
-        height: 128px;
+            width: 130px;
+            height: 130px;
+        @media (max-width: 1199.98px) {
+            width: 115px;
+            height: 115px;
+        }
+        @media (max-width: 991.98px) {
+            width: 95px;
+            height: 95px;
+        }
+        @media (max-width: 767.98px) {
+            width: 75px;
+            height: 75px;  
+        }
+        @media (max-width: 575.98px) {
+            width: 60px;
+            height: 60px;  
+        }
+
         border-radius: 50%;
         object-fit: cover; //needed for rectangular images}
         }
     &__interaction {
-        flex:1;
     }
 
 }
@@ -58,26 +57,23 @@
 .video-box {
     display: flex;
     flex-wrap: wrap;
+
     
     width: 90%;
+    @media (max-width: 767.98px) {
+        width: 100%;   }
     margin: auto;
 
     &__card{
         width: 25%;
         height: 40vh;
-
     }
 
     &__card  img{
-        max-width: 100%;
-        height: auto;
+        max-width: 100%; //make img responsive
+        height: auto; //make img responsive
         }
-
-
-.footer-box {
-    text-align: center;
 }
 
-}
 
 

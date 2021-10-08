@@ -1,0 +1,123 @@
+/* component/collapsable-menu-css-only */
+/* Use: Burguer Icon without JS */
+/* Portable */
+
+@import url("https://use.fontawesome.com/releases/v5.13.0/css/all.css");
+
+.f-nav-box {
+        display:            flex;
+        flex-direction:     row;//horizontal
+        flex-wrap:          nowrap;//move down to the next line
+        justify-content:    space-between; //horizontal
+        //end flex properties
+        width: 90%;
+        @media (max-width: 767.98px) {
+        width: 100%;    
+        }
+        margin: auto;
+
+        &__brand {
+        }
+
+        &__brand-logo {
+                width: auto;
+                height: 5em;
+@media (max-width: 767.98px){
+                max-width: 100%; //make img responsive on smaller screens
+                height: auto; //make img responsive on smaller screens
+        }
+@media (max-width: 575.98px) {
+                height: 3em;
+}
+
+        }
+    
+        &__menu {}
+    }
+
+//===============================
+// 1. Mixin
+//===============================
+@mixin animate{
+        -webkit-transition: 0.4s;
+        -o-transition: 0.4s;
+        transition: 0.4s;
+        -webkit-animation-timing-function: linear;
+                animation-timing-function: linear;
+        -webkit-transform-style: preserve-3d;
+                transform-style: preserve-3d;
+}
+//===============================
+// 2 Input checkbox
+//===============================
+input[type=checkbox] {    
+        display: none;
+// Checkbox in checked state
+        &:checked {
+        ~ .collapse {
+        height: 200px;
+        }
+        }
+}
+
+//===============================
+//3. Collapse Menu
+//===============================
+
+.collapse {
+        text-align: right; //position the burger icon
+
+       &__menu-content {
+@media (max-width: 991.98px) { //collapsed
+        text-align: left; //position the text inside the collapsed box
+@media (max-width: 575.98px) {
+        text-align: right; //position the text inside the collapsed box
+}
+
+        }
+        }
+
+        &__menu-content a {
+                text-decoration: none;
+                color: inherit;
+                font-family: inherit;
+        }
+            
+@media (max-width: 991.98px) // when x-small, small and medium: Collapsed
+{
+        @include animate;
+        display: block;
+        width: 170px;
+@media (max-width: 575.98px) {
+        width: 80px;
+}
+        height: 2.5em; /* Needs to match Icon Font-Size */
+        overflow: hidden;
+        cursor:pointer;
+
+
+        &__menu-icon:before {
+                font-family: "Font Awesome 5 Free";
+                content: '\f0c9'; 
+                font-weight: 900; /* This needs to be 900 for the icon to display */
+                font-size:2.5em; /* Icon Font-Size to match */
+        }
+
+
+
+        &__menu-content a {
+                line-height: 1.5em; //Styling (responsive to smaller screens)
+        }
+}
+
+// when large, x-large and xx-large: State not collapsed
+@media (min-width: 992px) {
+   
+        &__menu-content > li {
+                display: inline;
+        }
+}
+}
+
+
+

@@ -11,6 +11,7 @@
     //typography
 // 4 Layout (grid)
 @import './layout/breakpoint-master-dont-modify';
+@import './layout/column-master-dont-modify';
 @import './layout/layout-global-level-responsive-design';
 // 5 Components (styles)
     //accordion
@@ -21,13 +22,13 @@
     //card
     //carousel
     //collapse
-    @import './components/collapsable-menu-css-only';
+    @import './components/nav-box-css-only';
+    @import './components/footer-box';
     //cropdowns
-    //footer-not-here
+    //footer
     //forms
     @import './components/hero';
     //list
-    //nav-not-here
     //modal
     //offcanvas
     //pagination
