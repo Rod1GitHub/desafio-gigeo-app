@@ -6,9 +6,9 @@ body{
     }
     
     h1 {
-        font-family: $font-classic;
-        font-size: $xxx-large;
-        font-weight: $weight-bold;
+        font-family: $font-modern;
+        font-size: $xx-large;
+        font-weight: $weight-normal;
     }
     
     h2 {
@@ -23,6 +23,30 @@ body{
         font-weight: $weight-bold;
         padding:5px;
     }
+
+    h4 {
+        font-family: $font-modern;
+        font-size: $large;
+        color: $smoky-black;
+        font-weight: $weight-bold;
+        padding-top: .5em;
+        @media (max-width: 767.98px) {
+            font-size: $large;   
+    }
+    }
+
+    h5 {
+        font-family: $font-modern;
+        font-size: $medium;
+        color: $granite-gray;
+        font-weight: $weight-normal;
+        padding-top: .5em;
+        @media (max-width: 767.98px) {
+            font-size: $medium;   
+    }
+    }
+  
+
     
     label {
         font-family: $font-classic;
